@@ -13,7 +13,7 @@ class Admin::ItemsController < ApplicationController
     if @item.save
       redirect_to admin_item_path(@item)
     else
-      render new
+      render 'new'
     end
   end
 
@@ -22,9 +22,15 @@ class Admin::ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
+    if @item.uppdate(item_params)
+      redirect_to admin_item_path(@item)
+    else
+      render 'edit'
+    end
   end
   
   private

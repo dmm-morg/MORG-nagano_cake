@@ -9,5 +9,5 @@ class Item < ApplicationRecord
   def tax_included_price
     (tax_excluded_price * 1.1).floor
   end
-
+  
 end
