@@ -1,35 +1,44 @@
 <div class="container">
   <div class="row">
     <h2>商品詳細</h2>
-    <table>
-      <tbody>
-        <tr>
-          <td><h6>商品名</h6></td>
-          <td><%= @item.name %></td>
-        </tr>
-        <tr>
-          <td><h6>商品説明</h6></td>
-          <td><%= @item.introduction %></td>
-        </tr>
-        <tr>
-          <td><h6>ジャンル</h6></td>
-          <td><%= @item.genre_id %></td>
-        </tr>
-        <tr>
-          <td>税込価格<br>(税抜価格)</td>
-          <td>
-            <%= @item.tax_excluded_price %>
-            <%= @item.tax_included_price %>
-          </td>
-        </tr>
-        <tr>
-          <label>販売ステータス</label>
-          <td><%= @item.sales_status %></td>
-        </tr>
-        <tr>
-          <td><%= link_to '編集する', edit_admin_item_path(@item), class: "btn btn-success" %></td>
-        </tr>
-      </tbody>
-    </table>
+  </div>
+  <div class="row">
+    <div class="col-3 offset-1">
+      <%= image_tag @item.image, size: "400x300" %>
+    </div>
+    <div class="col-5 offset-2">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td><h6>商品名</h6></td>
+            <td><h5><%= @item.name %></h5></td>
+          </tr>
+          <tr>
+            <td><h6>商品説明</h6></td>
+            <td><h5><%= @item.introduction %></h5></td>
+          </tr>
+          <tr>
+            <td><h6>ジャンル</h6></td>
+            <td><h5><%= @item.genre_id %></h5></td>
+          </tr>
+          <tr>
+            <td>税込価格<br>(税抜価格)</td>
+            <td>
+              <h5>
+                <%= @item.tax_excluded_price %>
+                (<%= @item.tax_included_price %>)円
+              </h5>
+            </td>
+          </tr>
+          <tr>
+            <td><h6>販売ステータス</h6></td>
+            <td><%= @item.sales_status %></td>
+          </tr>
+          <tr>
+            <td><%= link_to '編集する', edit_admin_item_path(@item), class: "btn btn-success" %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
