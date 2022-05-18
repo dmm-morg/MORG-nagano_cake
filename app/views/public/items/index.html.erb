@@ -4,13 +4,17 @@
   <div class="row">
     <% @items.each do |item| %>
       <div class="col-lg-4">
-        <div class="card">
-          <img class="card-img-top" src="#<% item.image %>">
-          <div class="card-body">
-            <h4 class="card-title"><% item.name %></h4>
-            <p class="card-text"><%= item.tax_excluded_price %></p>
+        <%= link_to(item) do %>
+          <div class="card">
+            <div class="card-img-top">
+              <%= image_tag item.image, size: "250x200" %>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title"><%= item.name %></h4>
+              <p class="card-text"><%= item.tax_excluded_price %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     <% end %>
   </div>
