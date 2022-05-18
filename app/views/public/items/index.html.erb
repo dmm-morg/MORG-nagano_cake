@@ -1,1 +1,17 @@
-<h1>商品一覧</h1>
+<h1>利用者</h1>
+<h2>商品一覧</h2>
+<div class="container">
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-lg-4">
+        <div class="card">
+          <img class="card-img-top" src="#<% item.image %>">
+          <div class="card-body">
+            <h4 class="card-title"><% item.name %></h4>
+            <p class="card-text"><%= item.tax_excluded_price %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
