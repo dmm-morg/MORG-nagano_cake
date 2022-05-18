@@ -2,11 +2,6 @@ Rails.application.routes.draw do
 
   # 顧客用
 
-  devise_for :customers,skip: [:passwords], controllers: {
-    registrations: "public/registrations",
-    sessions: 'public/sessions'
-  }
-
   scope module: :public do
     # customers
     get "customers/unsubscribe" => "customers#unsubscribe"
@@ -34,6 +29,11 @@ Rails.application.routes.draw do
     resources :addresses, only: [:index, :create, :destroy, :update, :edit]
 
   end
+  
+  devise_for :customers,skip: [:passwords], controllers: {
+    registrations: "public/registrations",
+    sessions: 'public/sessions'
+  }
 
 
 
