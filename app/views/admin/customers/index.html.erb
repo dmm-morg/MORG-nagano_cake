@@ -1,4 +1,4 @@
-
+<h1>会員一覧</h1>
 
 
 <table>
@@ -15,7 +15,11 @@
     <% @customers.each do |customer| %>
     <tr>
       <td><%= customer.id %></td>
-      <td><%= customer.last_name %><%= customer.first_name %></td>
+      <td>
+        <%= link_to admin_customer_path(customer) do %>
+          <%= customer.last_name %><%= customer.first_name %>
+        <% end %>
+      </td>
       <td><%= customer.email %></td>
       <td><% if customer.is_deleted == false %>
         　有効会員
