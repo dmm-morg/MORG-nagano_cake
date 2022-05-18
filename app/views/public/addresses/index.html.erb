@@ -1,3 +1,13 @@
+<% if @address.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= pluralize(@address.errors.count, "error") %> prohibited this obj from being saved:</h3>
+    <ul>
+      <% @address.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <h3>配送先登録/一覧</h3>
 <%= form_with model: @address do |f| %>
   <div class="field">
@@ -34,8 +44,10 @@
         <td><%= address.address %></td>
         <td><%= address.name %></td>
         <td>
+          <% if address.customer == current_customer %>
           <%= link_to "編集する", edit_address_path(address.id), class: "btn btn-success" %>
           <%= link_to "削除する", address_path(address.id), method: :delete, class: "btn btn-danger" %>
+          <% end %>
         </td>
       </tr>
       <% end %>
