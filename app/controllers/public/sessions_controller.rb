@@ -21,15 +21,6 @@ class Public::SessionsController < Devise::SessionsController
 
   protected
 
-  def after_sign_in_path_for(resource)
-    customers_my_page_path
-  end
-
-  # 実装時は不要
-  def after_sign_out_path_for(resource)
-    root_path
-  end
-
   def customer_state
     @customer = Customer.find_by(email: params[:customer][:email])
     return if !@customer
