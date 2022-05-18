@@ -11,13 +11,14 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to admin_items_path
+      redirect_to admin_item_path(@item)
     else
       render new
     end
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def edit
@@ -25,4 +26,11 @@ class Admin::ItemsController < ApplicationController
 
   def update
   end
+  
+  private
+  
+  def item_params
+    params.require(:item).permit(:name, :introduction, :tax_excluded_price, :sales_status, :genre_id, :image)
+  end
+
 end
