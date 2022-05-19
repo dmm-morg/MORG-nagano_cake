@@ -8,6 +8,13 @@ class Public::CartItemsController < ApplicationController
   end
 
   def update
+    @cart_item = CartItem.find(params[:id])
+    if @cart_item.update(cart_item_params)
+      redirect_to cart_items_path(@cart_item.id)
+    else
+      @cart_items = CartItem.all
+      render :index
+    end
   end
 
   def create
@@ -31,14 +38,15 @@ class Public::CartItemsController < ApplicationController
   end
 
   def all_destroy
-    current_customer.cart_items.all_destroy
+    current_customer.cart_items.destroy_all
     redirect_to cart_items_path
   end
 
   private
 
   def cart_item_params
-    params.require(:cart_item).permit(:total_count, :item_id)
+    params.require(:cart_item).permit(:total_count, :item_id, :customer_id)
   end
 
 end
+
