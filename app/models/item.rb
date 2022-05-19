@@ -10,4 +10,6 @@ class Item < ApplicationRecord
     (tax_excluded_price * 1.1).floor
   end
   
+  enum sales_status: { sale: true, stop_selling: false }
+  
 end
