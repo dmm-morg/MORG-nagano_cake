@@ -7,12 +7,12 @@ class Item < ApplicationRecord
   belongs_to :genre
   
   with_options presence: true do
-    validate :name
-    validate :introduction
-    validate :tax_excluded_price
-    validate :sales_status
-    validate :genre_id
-    validate :image
+    validates :name
+    validates :introduction
+    validates :tax_excluded_price
+    validates :sales_status
+    validates :genre_id
+    validates :image
   end
 
   def tax_included_price
