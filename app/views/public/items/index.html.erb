@@ -1,1 +1,24 @@
-<h1>商品一覧</h1>
+<h1>利用者</h1>
+<h2>商品一覧</h2>
+<div class="container">
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-lg-4">
+        <%= link_to(item) do %>
+          <div class="card">
+            <div class="card-img-top">
+              <%= image_tag item.image, size: "250x200" %>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title"><%= item.name %></h4>
+              <p class="card-text">
+                <i class="fas fa-yen-sign"></i>
+                <%= item.tax_excluded_price.to_s(:delimited) %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
