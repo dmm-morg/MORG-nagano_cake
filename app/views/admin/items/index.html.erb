@@ -1,24 +1,35 @@
-<h1>管理者</h1>
-<h2>商品一覧</h2>
-<table class="table">
-  <thead>
-    <tr>
-      <th>商品ID</th>
-      <th>商品名</th>
-      <th>税抜価格</th>
-      <th>ジャンル</th>
-      <th>ステータス</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.id %></td>
-        <td><%= link_to item.name, admin_item_path(item.id) %></td>
-        <td><%= item.tax_excluded_price %></td>
-        <td><%= item.genre_id %></td>
-        <td><%= item.sales_status %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <h2>商品一覧</h2>
+    <div class="icon ml-auto">
+      <%= link_to  new_admin_item_path, style:"font-size:40px;" do %>
+        <i class="fas fa-plus-circle"></i>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>商品ID</th>
+          <th>商品名</th>
+          <th>税抜価格</th>
+          <th>ジャンル</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @items.each do |item| %>
+          <tr>
+            <td><%= item.id %></td>
+            <td><%= link_to item.name, admin_item_path(item.id) %></td>
+            <td><%= item.tax_excluded_price %></td>
+            <td><%= item.genre_id %></td>
+            <td><%= item.sales_status %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

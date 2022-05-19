@@ -11,7 +11,10 @@
             </div>
             <div class="card-body">
               <h4 class="card-title"><%= item.name %></h4>
-              <p class="card-text"><%= item.tax_excluded_price %></p>
+              <p class="card-text">
+                <i class="fas fa-yen-sign"></i>
+                <%= item.tax_excluded_price.to_s(:delimited) %>
+              </p>
             </div>
           </div>
         <% end %>
