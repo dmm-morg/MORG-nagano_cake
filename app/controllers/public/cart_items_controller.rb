@@ -10,10 +10,7 @@ class Public::CartItemsController < ApplicationController
   def update
     @cart_item = CartItem.find(params[:id])
     if @cart_item.update(cart_item_params)
-      redirect_to cart_items_path(@cart_item.id)
-    else
-      @cart_items = CartItem.all
-      render :index
+      redirect_to request.referer
     end
   end
 
@@ -49,4 +46,5 @@ class Public::CartItemsController < ApplicationController
   end
 
 end
+
 
