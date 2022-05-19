@@ -24,8 +24,14 @@
             <td><%= item.id %></td>
             <td><%= link_to item.name, admin_item_path(item.id) %></td>
             <td><%= item.tax_excluded_price %></td>
-            <td><%= item.genre_id %></td>
-            <td><%= item.sales_status %></td>
+            <td><%= item.genre.name %></td>
+            <td>
+              <% if item.sales_status_i18n == "販売中" %>
+                <b class="text-success"><%= item.sales_status_i18n %></b>
+              <% else %>
+                <b class="text-danger"><%= item.sales_status_i18n %></b>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

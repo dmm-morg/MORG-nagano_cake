@@ -5,6 +5,15 @@ class Item < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   has_many :order_details, dependent: :destroy
   belongs_to :genre
+  
+  with_options presence: true do
+    validates :name
+    validates :introduction
+    validates :tax_excluded_price
+    validates :sales_status
+    validates :genre_id
+    validates :image
+  end
 
   def tax_included_price
     (tax_excluded_price * 1.1).floor
