@@ -1,4 +1,5 @@
-    <h2><%= @customer.last_name %><%= @customer.first_name %>さんの会員詳細</h2>
+    <h3><%= @customer.last_name %><%= @customer.first_name %>さんの会員詳細</h3>
+
     <table>
       <thead>
         <tr>
@@ -44,6 +45,5 @@
     <table>
       <tr>
         <th><%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn btn-sm btn-success" %></th>
-
       </tr>
     </table>
