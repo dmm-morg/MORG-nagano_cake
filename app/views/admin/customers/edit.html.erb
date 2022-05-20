@@ -1,4 +1,4 @@
-<h2><%= @customer.last_name %><%= @customer.first_name %>さんの会員情報編集</h2>
+<h3><%= @customer.last_name %><%= @customer.first_name %>さんの会員情報編集</h3>
 
 <%= form_with model:@customer, url:admin_customer_path(@customer), method: :patch do |f| %>
   <label>会員ID</label>
