@@ -1,11 +1,6 @@
 <h3>注文情報確認</h3>
 
 
-
-<p><strong>お届け先:</strong><%= @customer.address_display_code %></p>
-
-
-
 <%= form_with model: @order, url: orders_path, method: :post, local: true do |f| %>
   <%= f.hidden_field :payment_method %>
   <%= f.hidden_field :address %>

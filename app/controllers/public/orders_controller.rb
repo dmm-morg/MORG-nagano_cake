@@ -17,13 +17,15 @@ class Public::OrdersController < ApplicationController
       @order.address = @address.address
       @order.name = @address.name
     elsif params[:order][:address_number] == "3"
-      address_new = current_customer.address.new(address_params)
-      address_new.save
-      pry.byebug
+      @order.post_code = params[:order][:post_code]
+      @order.address = params[:order][:address]
+      @order.name = params[:order][:name]
+      # pry.byebug
     else
       redirect_to request.referer
     end
   end
+  
 
 
   #   @address = Address.find(params[:order][:address_id])
@@ -49,8 +51,8 @@ class Public::OrdersController < ApplicationController
       params.require(:order).permit(:payment_method, :post_code, :address, :name)
     end
 
-    def address_params
-      params.require(:order).permit(:name, :address, :post_code)
-    end
+    # def address_params
+    #   params.require(:order).permit(:name, :address, :post_code)
+    # end
 
 end
