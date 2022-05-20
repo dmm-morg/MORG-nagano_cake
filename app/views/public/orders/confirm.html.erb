@@ -1,5 +1,49 @@
 <h3>注文情報確認</h3>
 
+<table>
+  <thead>
+    <tr>
+      <th>商品名</th>
+      <th>単価(税込)</th>
+      <th>数量</th>
+      <th>小計</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart_items.each do |cart_item| %>
+    <tr>
+      <td height = "50">
+        <%= image_tag cart_item.item.image, size: "10×10" %>
+        <%= cart_item.item.name %>
+      </td>
+      <td><%= cart_item.item.tax_included_price.to_s(:delimited) %></td>
+      <td><%= cart_item.total_count %></td>
+      <td><%= cart_item.subtotal.to_s(:delimited)%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <th>送料</th>
+      <th><%= @order.shipping_cost %></th>
+    </tr>
+    <tr>
+      <th>商品合計</th>
+      <th><%= @total.round.to_s(:delimited) %></th>
+    </tr>
+    <tr>
+      <th>請求金額</th>
+      <th><%= @order.total_payment.to_s(:delimited) %></th>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>支払い方法:</strong><%= @order.payment_method_i18n %></p>
+<p><strong>お届け先:</strong></p>
+
 
 <%= form_with model: @order, url: orders_path, method: :post, local: true do |f| %>
   <%= f.hidden_field :payment_method %>

@@ -3,6 +3,7 @@ class Public::OrdersController < ApplicationController
   def new
     @customer = current_customer
     @order = Order.new
+    @address = Address.new
   end
 
   def confirm
@@ -20,12 +21,15 @@ class Public::OrdersController < ApplicationController
       @order.post_code = params[:order][:post_code]
       @order.address = params[:order][:address]
       @order.name = params[:order][:name]
-      # pry.byebug
     else
       redirect_to request.referer
     end
+    @cart_items = current_customer.cart_items.all
+    @order.shipping_cost = 800
+    @total = @cart_items.inject(0) { |sum, item| + sum + item.subtotal }
+    @order.total_payment = @order.shipping_cost + @total
   end
-  
+
 
 
   #   @address = Address.find(params[:order][:address_id])
@@ -48,11 +52,14 @@ class Public::OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:payment_method, :post_code, :address, :name)
+      params.require(:order).permit(:payment_method, :post_code, :address, :name, :shipping_cost)
     end
 
     # def address_params
     #   params.require(:order).permit(:name, :address, :post_code)
     # end
 
+    def address_params
+      params.require(:order).permit(:name, :address, :name)
+    end
 end
