@@ -1,1 +1,22 @@
-<h1>top</h1>
+<h2>注文履歴一覧</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>購入日時</th>
+      <th>購入者</th>
+      <th>注文個数</th>
+      <th>注文ステータス</th>
+    </tr>
+  </thead>
+  <% @orders.each do |order| %>
+  <tbody>
+    <tr>
+      <td><%= order.created_at.strftime("%Y/%m/&d %H:%M:%S") %></td>
+      <td><%= order.customer.last_name.first.name %></td>
+      <td><%= order.orderdetail.total_count %></td>
+      <td><%= order.order_status %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
