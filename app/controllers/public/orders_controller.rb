@@ -3,7 +3,7 @@ class Public::OrdersController < ApplicationController
   def new
     @customer = current_customer
     @order = Order.new
-    @address = Address.new
+    @addresses = current_customer.addresses.all
   end
 
   def confirm
@@ -31,14 +31,21 @@ class Public::OrdersController < ApplicationController
   end
 
 
-
-  #   @address = Address.find(params[:order][:address_id])
-  #   @order.post_code = @address.post_code
-  #   @order.address = @address.address
-  #   @order.name = @address.name
-  # end
-
   def create
+    @order = Order.new(order_params)
+    @order.customer_id = current_customer.id
+    @order.save
+
+    current_customer.cart_items.each do |cart_item|
+      @order_details = OrderDetail.new
+      @order_details.order_id = @order.id
+      @order_details.item_id = cart_item.item_id
+      @order_details.count = cart_item.total_count
+      @order_details.tax_included_price = (cart_item.item.tax_excluded_price*1.08).floor
+      @order_details.save
+    end
+    current_customer.cart_items.destroy_all
+    redirect_to orders_finish_path
   end
 
   def finish
@@ -52,7 +59,7 @@ class Public::OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:payment_method, :post_code, :address, :name, :shipping_cost)
+      params.require(:order).permit(:payment_method, :post_code, :address, :name, :shipping_cost, :customer_id, :total_payment, :order_status)
     end
 
     # def address_params
