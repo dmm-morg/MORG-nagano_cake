@@ -15,8 +15,7 @@
           <tr>
             <td>
               <strong>
-                <i class="fas fa-yen-sign"></i>
-                <%= @item.tax_included_price.to_s(:delimited) %>
+                ￥<%= @item.tax_included_price.to_s(:delimited) %>
                 <span class="small">(税込)</span>
               </strong>
             </td>
