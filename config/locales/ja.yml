@@ -4,7 +4,7 @@ ja:
       sales_status:
         sale: "販売中"
         stop_selling: "販売停止中"
-        
+
 ja:
   enums:
     order:
