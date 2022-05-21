@@ -1,1 +1,41 @@
-<h1>TOP</h1>
+<div class="container container-top">
+  <div class="row d-flex justify-content-center">
+    <div class="card text-white" style="width: 35rem">
+      <%= image_tag 'top.jpg' %>
+      <div class="card-img-overlay d-flex justify-content-center align-items-center">
+        <p class="card-text" id="top-text">
+          ようこそ、ながのCAKEへ！<br>
+          このサイトは、ケーキ販売のECサイトになります。<br>
+          会員でない方も商品の閲覧はできますが、<br>
+          購入には会員登録が必要になります。<br>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+     <h2>新着商品</h2>
+  </div>
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-lg-3">
+        <%= link_to(item) do %>
+          <div class="card">
+            <div class="card-img-top">
+              <%= image_tag item.image, size: "250x200" %>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title"><%= item.name %></h4>
+              <p class="card-text">
+                <i class="fas fa-yen-sign"></i>
+                <%= item.tax_excluded_price.to_s(:delimited) %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="d-flex justify-content-end mr-5 mt-3">
+  <%= link_to '全ての商品を見る＞', items_path %>
+</div>
