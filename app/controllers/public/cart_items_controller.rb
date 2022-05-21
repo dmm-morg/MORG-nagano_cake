@@ -30,7 +30,7 @@ class Public::CartItemsController < ApplicationController
   def destroy
     cart_item = CartItem.find(params[:id])
     cart_item.delete
-    redirect_to cart_items_path, notice: "カートから商品が削除されました"
+    redirect_to request.referer, notice: "カートから商品が削除されました"
   end
 
   def all_destroy
