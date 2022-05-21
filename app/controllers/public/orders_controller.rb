@@ -34,6 +34,15 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
+    unless Address.where(post_code: @order.post_code)
+    address = Address.new
+    address.customer_id = current_customer.id
+    address.name = @order.name
+    address.post_code = @order.post_code
+    address.address = @order.address
+    address.save
+    end
+    # binding.pry
     @order.save
 
     current_customer.cart_items.each do |cart_item|
