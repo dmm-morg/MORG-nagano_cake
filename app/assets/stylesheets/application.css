@@ -14,6 +14,10 @@
  *= require_self
  */
  
+ main {
+   padding-top: 50px;
+ }
+ 
  #top-text {
    background-color: rgba(0, 0, 0, 0.6);
  }
