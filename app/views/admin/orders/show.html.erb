@@ -26,7 +26,7 @@
           <tr>
             <th>支払方法</th>
             <th>
-                <%= @order.payment_method_i18n %>
+              <%= @order.payment_method_i18n %>
             </th>
           </tr>
           <%= form_with model: @order, url: admin_order_path, method: :patch, local: true do |f| %>
