@@ -16,10 +16,12 @@ ja:
         preparing: "発送準備中"
         shipped: "発送済み"
 
+
     order_detail:
       making_status:
         impossible_manufacture: '着手不可'
         waiting_manufacture: '製作待ち'
         manufacturing: '製作中'
         finish: '製作完了'
+
 

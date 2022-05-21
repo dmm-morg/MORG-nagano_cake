@@ -1,44 +1,43 @@
 <div class="container">
   <div class="row">
-    <h2>商品詳細</h2>
-  </div>
-  <div class="row">
     <div class="col-3 offset-1">
-      <%= image_tag @item.image, size: "350x300" %>
+      <%= image_tag @item.image, class: "show-img" %>
     </div>
     <div class="col-5 offset-2">
       <table class="table">
         <tbody>
           <tr>
-            <td><h5><%= @item.name %></h5></td>
+            <td><strong><%= @item.name %></strong></td>
           </tr>
           <tr>
-            <td><h5><%= @item.introduction %></h5></td>
+            <td><p><%= @item.introduction %></p></td>
           </tr>
           <tr>
             <td>
-              <h5>
-                <i class="fas fa-yen-sign"></i>
-                <%= @item.tax_included_price.to_s(:delimited) %>
+              <strong>
+                ￥<%= @item.tax_included_price.to_s(:delimited) %>
                 <span class="small">(税込)</span>
-              </h5>
+              </strong>
             </td>
           </tr>
           <tr>
-            <td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="border:none;">
+              <div class="d-flex justify-content-center">
+                <%= form_with model: @cart_item, url: cart_items_path do |f| %>
+                  <%= f.select :total_count, *[1..10], {:prompt => "個数選択"} %>
+                  <%= f.hidden_field :item_id, :value => @item.id %>
+                  <%= f.hidden_field :customer_id, :value => current_customer.id %>
+                  <%= f.submit "カートに入れる", class: "btn btn-success" %>
+                <% end %>
+              </div>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
-  <div>
-    <%= form_with model: @cart_item, url: cart_items_path do |f| %>
-      <%= f.select :total_count, *[1..10], {:prompt => "個数選択"} %>
-      <%= f.hidden_field :item_id, :value => @item.id %>
-      <%= f.hidden_field :customer_id, :value => current_customer.id %>
-      <%= f.submit "カートに入れる", class: "btn btn-success" %>
-    <% end %>
   </div>
 </div>
 
