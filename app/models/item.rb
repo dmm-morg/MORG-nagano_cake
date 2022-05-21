@@ -21,6 +21,11 @@ class Item < ApplicationRecord
   end
 
   enum sales_status: { sale: true, stop_selling: false }
+  
+  def get_item_image(size)
+    image.variant(resize: size).processed
+  end
+  
 
 end
 
