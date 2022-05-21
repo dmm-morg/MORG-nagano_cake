@@ -9,10 +9,10 @@
         <%= link_to(item) do %>
           <div class="card">
             <div class="card-img-top">
-              <%= image_tag item.image, class: "index-img" %>
+              <%= image_tag item.image, class: "index-img img-fluid mx-auto d-block " %>
             </div>
             <div class="card-body">
-              <h4 class="card-title"><%= item.name %></h4>
+              <h5 class="card-title"><%= item.name %></h5>
               <p class="card-text">
                 <i class="fas fa-yen-sign"></i>
                 <%= item.tax_excluded_price.to_s(:delimited) %>
