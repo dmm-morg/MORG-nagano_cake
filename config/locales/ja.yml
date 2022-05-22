@@ -17,6 +17,14 @@ ja:
         shipped: "発送済み"
 
 
+    order_detail:
+      making_status:
+        impossible_manufacture: '着手不可'
+        waiting_manufacture: '製作待ち'
+        manufacturing: '製作中'
+        finish: '製作完了'
+
+
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
@@ -79,3 +87,4 @@ ja:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+

@@ -38,6 +38,12 @@
   height: 300px;
 }
 
+/* エラーメッセージ表示時のレイアウトの崩れを抑える */
+.field_with_errors {
+  display: contents;
+}
+
+
 /*管理者・利用者のログイン・新規会員登録*/
 .field {
   margin-top: 20px;
@@ -53,3 +59,4 @@
   margin-top: 30px;
   margin-bottom: 10px;
 }
+
