@@ -1,6 +1,14 @@
 <div class='container'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <% if @item.errors.any? %>
+        <%= @item.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @item.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
       <%= form_with model: @item, url: admin_items_path do |f| %>
         <div class="form-group row">
           <label class="col-sm-3 col-form-label">商品画像</label>
@@ -28,8 +36,8 @@
         </div>
         <div class="form-group row">
           <label class="col-sm-3 col-form-label">税抜価格</label>
-          <div class="col-md-9  d-flex flex-row">
-            ￥<%= f.text_field :tax_excluded_price, placeholder: "1000", class: 'form-control item_tax_excluded_price' %>
+          <div class="col-md-9 d-flex flex-row">
+            <span>￥</span><%= f.text_field :tax_excluded_price, placeholder: "1000", class: 'form-control item_tax_excluded_price' %>
           </div>
         </div>
         <div class="form-group">
