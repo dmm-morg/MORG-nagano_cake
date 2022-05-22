@@ -54,13 +54,13 @@
           </tr>
         </thead>
         <tbody>
-          <% @order_details.all.each do |order_detail| %>
+          <% @order_details.each do |order_detail| %>
           <tr>
             <td><%= order_detail.item.name %></td>
             <td><%= (order_detail.item.tax_included_price).to_s(:delimited) %>円</td>
             <td><%= order_detail.count %>　個</td>
             <td><%= (order_detail.item.tax_included_price*order_detail.count).to_s(:delimited) %>円</td>
-              <%= form_with model: order_detail, url: admin_order_detail_path, method: :patch, local: true do |f| %>
+              <%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), method: :patch, local: true do |f| %>
                 <td><%= f.select :making_status, OrderDetail.making_statuses_i18n.invert, class: "making_status" %></td>
                 <td><%= f.submit "更新", class: "btn btn-outline-success" %></td>
               <% end %>

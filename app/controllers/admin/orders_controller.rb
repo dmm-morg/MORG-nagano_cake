@@ -9,7 +9,12 @@ class Admin::OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
-    @order.update(order_params)
+    @order.update(order_status: params[:order][:order_status])
+    if params[:order][:order_status] == "confirm_payment"
+      @order.order_details.each do |order_detail|
+        order_detail.update(making_status: "waiting_manufacture")
+      end
+    end
     redirect_to request.referer
   end
 
