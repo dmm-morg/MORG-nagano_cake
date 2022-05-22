@@ -13,20 +13,20 @@
  *= require_tree .
  *= require_self
  */
- 
+
  main {
    padding-top: 50px;
  }
- 
+
  #top-text {
    background-color: rgba(0, 0, 0, 0.6);
  }
- 
+
  .index-img {
    width: 250px;
    height: auto;
  }
- 
+
  .show-img {
    width: 350px;
    height: auto;
@@ -38,3 +38,18 @@
   height: 300px;
 }
 
+/*管理者・利用者のログイン・新規会員登録*/
+.field {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 0;
+}
+
+.log {
+  font-size: 40px;
+}
+
+.pass {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
