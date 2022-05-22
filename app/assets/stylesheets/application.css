@@ -13,20 +13,20 @@
  *= require_tree .
  *= require_self
  */
- 
+
  main {
    padding-top: 50px;
  }
- 
+
  #top-text {
    background-color: rgba(0, 0, 0, 0.6);
  }
- 
+
  .index-img {
    width: 250px;
    height: auto;
  }
- 
+
  .show-img {
    width: 350px;
    height: auto;
@@ -38,3 +38,7 @@
   height: 300px;
 }
 
+/* エラーメッセージ表示時のレイアウトの崩れを抑える */
+.field_with_errors {
+  display: contents;
+}
