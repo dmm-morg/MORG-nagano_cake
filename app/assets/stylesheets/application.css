@@ -22,6 +22,11 @@
    background-color: rgba(0, 0, 0, 0.6);
  }
  
+ .index-img {
+   margin-top: 3px;
+   border-radius: 5px;
+ }
+ 
  .show-img {
    width: 350px;
    height: auto;
