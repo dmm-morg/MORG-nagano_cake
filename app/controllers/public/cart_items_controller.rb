@@ -22,7 +22,7 @@ class Public::CartItemsController < ApplicationController
       redirect_to cart_items_path, notice: "カートに商品が追加されました"
     else
       @cart_item = CartItem.new(cart_item_params)
-      @cart_item.saves
+      @cart_item.save
       redirect_to cart_items_path
     end
   end
