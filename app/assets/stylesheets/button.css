@@ -7,3 +7,7 @@ input.btn-success:hover {
   border: 2px solid #9f6f55;
   background: #9f6f55;
 }
+
+.social-btn {
+  color: #fff;
+}
