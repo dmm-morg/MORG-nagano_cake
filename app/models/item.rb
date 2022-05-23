@@ -8,12 +8,12 @@ class Item < ApplicationRecord
   belongs_to :genre
 
   with_options presence: true do
+    validates :image
     validates :name
     validates :introduction
     validates :tax_excluded_price
     validates :sales_status
     validates :genre_id
-    validates :image
   end
 
   def tax_included_price
@@ -21,6 +21,11 @@ class Item < ApplicationRecord
   end
 
   enum sales_status: { sale: true, stop_selling: false }
+  
+  def get_item_image(size)
+    image.variant(resize: size).processed
+  end
+  
 
 end
 
