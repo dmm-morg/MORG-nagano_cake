@@ -23,8 +23,8 @@
  }
 
  .index-img {
-   width: 250px;
-   height: auto;
+   margin-top: 3px;
+   border-radius: 5px;
  }
 
  .show-img {
