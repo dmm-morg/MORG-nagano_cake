@@ -1,0 +1,9 @@
+input.btn-success {
+  border: 2px solid #583822;
+  background: #583822;
+}
+
+input.btn-success:hover {
+  border: 2px solid #9f6f55;
+  background: #9f6f55;
+}
