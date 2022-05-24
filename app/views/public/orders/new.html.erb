@@ -13,6 +13,7 @@
       <% end %>
       <h4 class="mini-title">注文情報入力</h4>
     </div>
+  </div>
     <div class="row">
       <div class="col-12">
       <%= form_with model: @order, url: orders_confirm_path, method: :post, local: true do |f| %>
@@ -48,16 +49,16 @@
         <br>
         <table>
           <tr>
-            <td class='col-3'><%= f.label :post_code, "郵便番号(ハイフンなし)" %></td>
-            <td class='col-9'><%= f.text_field :post_code %></td>
+            <td><%= f.label :post_code, "郵便番号(ハイフンなし)" %></td>
+            <td><%= f.text_field :post_code %></td>
           </tr>
           <tr>
-            <td class='col-3'><%= f.label :address, "住所" %></td>
-            <td class='col-9'><%= f.text_field :address %></td>
+            <td><%= f.label :address, "住所" %></td>
+            <td><%= f.text_field :address %></td>
           </tr>
           <tr>
-            <td class='col-3'><%= f.label :name, "宛名" %></td>
-            <td class='col-9'><%= f.text_field :name %></td>
+            <td><%= f.label :name, "宛名" %></td>
+            <td><%= f.text_field :name %></td>
           </tr>
         </table>
 
@@ -66,5 +67,4 @@
         </div>
       <% end %>
     </div>
-  </div>
 </div>

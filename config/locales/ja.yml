@@ -296,15 +296,14 @@ ja:
     pm: 午後
 
   activerecord:
-      models:
-        address: 配送先
-      attributes:
-        address:
-          name: 宛先
-          post_code: 郵便番号
-          address: 住所
+        models:
+          address: 配送先
+        attributes:
+          address:
+            name: 宛先
+            post_code: 郵便番号
+            address: 住所
 
-  activerecord:
         models:
           order: 配送先
         attributes:
@@ -312,3 +311,8 @@ ja:
             name: 配達先氏名
             post_code: 配達先郵便番号
             address: 配達先住所
+        
+        
+        
+
+
