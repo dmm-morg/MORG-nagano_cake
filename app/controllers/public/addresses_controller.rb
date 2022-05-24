@@ -10,9 +10,10 @@ class Public::AddressesController < ApplicationController
     @address = Address.new(address_params)
     @address.customer_id = current_customer.id
     if @address.save
-    redirect_to request.referer
+    redirect_to request.referer, notice: "配送先登録に成功しました"
     else
-      @addresses = Address.all
+      # @addresses = Address.all
+      @addresses = current_customer.addresses #ログインしている会員のアドレスを全て@addressesに入れる
       render 'index'
     end
   end
@@ -29,10 +30,13 @@ class Public::AddressesController < ApplicationController
   end
 
   def update
-    address = Address.find(params[:id])
-    address.customer_id = current_customer.id
-    address.update(address_params)
-    redirect_to addresses_path
+    @address = Address.find(params[:id])
+    @address.customer_id = current_customer.id
+    if @address.update(address_params)
+     redirect_to addresses_path, notice: "更新に成功しました"
+    else
+      render 'edit'
+    end
   end
 
   private

@@ -1,5 +1,5 @@
 <div class="px-5 mx-5">
-  <div class="mx-3"><h3 class="mb-5">ショッピングカート</h3></div>
+  <div class="mini-title mx-3"><h3 class="mb-5">ショッピングカート</h3></div>
   <div class="row mx-5 px-5">
     <div class="col-12">
 
@@ -11,6 +11,7 @@
         </div>
 
       <div class="row cart">
+        <div class="col-12">
         <table border="1" style="border-collapse: collapse">
           <thead class ="table-active center">
             <tr>
@@ -25,7 +26,7 @@
           <tbody>
             <tr>
               <td class="col-4">
-                <%= image_tag cart_item.item.image, class: "cart-img img-fluid" %>
+                <%= image_tag cart_item.item.image, size: "130x80", class: "cart-img img-fluid my-1" %>
                 <%= cart_item.item.name %>
               </td>
               <td class="col-2">¥<%= cart_item.item.tax_included_price.to_s(:delimited) %></td>
@@ -34,7 +35,7 @@
                   <%= f.select :total_count, *[1..10], { selected: cart_item.total_count} %>
                   <%= f.hidden_field :item_id, value: cart_item.item.id %>
                   <%= f.hidden_field :customer_id, :value => current_customer.id %>
-                  <%= f.submit "変更", class: "btn btn-success btn-sm" %>
+                  <%= f.submit "変更", class: "btn btn-success btn-sm my-2" %>
                 <% end %>
               </td>
               <td class="col-2">¥<%= cart_item.subtotal.to_s(:delimited)%></td>
@@ -43,6 +44,7 @@
           </tbody>
           <% end %>
         </table>
+        </div>
     </div>
   </div>
 </div>
