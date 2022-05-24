@@ -4,13 +4,8 @@ input.btn-success, a.btn-success {
 }
 
 input.btn-success:hover, a.btn-success:hover {
-  border: 2px solid #6f4b3e;
-  background: #6f4b3e;
-}
-
-input.btn-success:active, a.btn-success:active {
-  border: 2px solid #6f4b3e;
-  background: #6f4b3e;
+  border: 2px solid #6f4b3e !important;
+  background: #6f4b3e !important;
 }
 
 input.btn-primary, a.btn-primary {
@@ -19,8 +14,8 @@ input.btn-primary, a.btn-primary {
 }
 
 input.btn-primary:hover, a.btn-primary:hover {
-  border: 2px solid #745399;
-  background: #745399;
+  border: 2px solid #745399 !important;
+  background: #745399 !important;
 }
 
 input.btn-danger, a.btn-danger {
@@ -29,8 +24,8 @@ input.btn-danger, a.btn-danger {
 }
 
 input.btn-danger:hover, a.btn-danger:hover {
-  border: 2px solid #e73562;
-  background: #e73562;
+  border: 2px solid #e73562 !important;
+  background: #e73562 !important;
 }
 
 .social-btn {
