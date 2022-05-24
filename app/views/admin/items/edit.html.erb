@@ -1,14 +1,7 @@
 <div class='container'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-      <% if @item.errors.any? %>
-        <%= @item.errors.count %>件のエラーが発生しました
-        <ul>
-          <% @item.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
+      <%= render "layouts/errors", obj: @item %>
       <%= form_with model: @item, url: admin_item_path(@item), method: :patch, local: true do |f| %>
         <div class="form-group row">
           <label class="col-sm-3 col-form-label">商品画像</label>

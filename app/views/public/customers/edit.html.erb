@@ -1,13 +1,3 @@
-<% if @customer.errors.any? %>
-  <div id="error_explanation">
-    <h3><%= pluralize(@customer.errors.count, "error") %> prohibited this obj from being saved:</h3>
-    <ul>
-      <% @customer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
 <div class="mb-5 ml-5">
   <h3>会員情報編集</h3>
 </div>
@@ -15,6 +5,7 @@
 
 <div class="px-5 mx-5 row">
   <div class="col-11">
+    <%= render "layouts/errors", obj: @customer %>
     <%= form_with model:@customer, url: customers_path, method: :patch do |f| %>
       <div class="form-group row">
         <%= f.label :氏名, class: "col-3" %>
