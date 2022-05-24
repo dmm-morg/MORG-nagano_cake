@@ -303,3 +303,12 @@ ja:
           name: 宛先
           post_code: 郵便番号
           address: 住所
+
+  activerecord:
+        models:
+          order: 配送先
+        attributes:
+          order:
+            name: 配達先氏名
+            post_code: 配達先郵便番号
+            address: 配達先住所

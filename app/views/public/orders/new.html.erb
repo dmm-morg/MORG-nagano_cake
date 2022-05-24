@@ -1,10 +1,20 @@
 <div class="container">
-  <div class="row py-2">
-    <div class="col-12 offset-2">
-      <h4><strong>注文情報入力</strong></h4>
+  <div class="row">
+    <div class="col-12">
+      <% if @order.errors.any? %>
+        <div id="error_explanation">
+          <h3><%= pluralize(@order.errors.count, "") %> 件のエラーが出ました</h3>
+          <ul>
+            <% @order.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <h4 class="mini-title">注文情報入力</h4>
     </div>
     <div class="row">
-      <div class="col">
+      <div class="col-12">
       <%= form_with model: @order, url: orders_confirm_path, method: :post, local: true do |f| %>
         <h5><strong>支払い方法</strong></h5>
         <p>
