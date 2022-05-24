@@ -1,6 +1,6 @@
 <% if @address.errors.any? %>
   <div id="error_explanation">
-    <h3><%= pluralize(@address.errors.count, "error") %> prohibited this obj from being saved:</h3>
+    <h3><%= pluralize(@address.errors.count, "") %> 件のエラーが出ました</h3>
     <ul>
       <% @address.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -8,6 +8,7 @@
     </ul>
   </div>
 <% end %>
+
 <h3>配送先登録/一覧</h3>
 <%= form_with model: @address do |f| %>
   <div class="field">
