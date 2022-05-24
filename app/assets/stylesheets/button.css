@@ -1,0 +1,39 @@
+input.btn-success, a.btn-success {
+  border: 2px solid #583822;
+  background: #583822;
+}
+
+input.btn-success:hover, a.btn-success:hover {
+  border: 2px solid #6f4b3e;
+  background: #6f4b3e;
+}
+
+input.btn-success:active, a.btn-success:active {
+  border: 2px solid #6f4b3e;
+  background: #6f4b3e;
+}
+
+input.btn-primary, a.btn-primary {
+  border: 2px solid #65318e;
+  background: #65318e;
+}
+
+input.btn-primary:hover, a.btn-primary:hover {
+  border: 2px solid #745399;
+  background: #745399;
+}
+
+input.btn-danger, a.btn-danger {
+  border: 2px solid #d70035;
+  background: #d70035;
+}
+
+input.btn-danger:hover, a.btn-danger:hover {
+  border: 2px solid #e73562;
+  background: #e73562;
+}
+
+.social-btn {
+  color: #fff;
+  margin-right: 30px;
+}

@@ -1,7 +1,7 @@
 <div class="container container-top">
   <div class="row d-flex justify-content-center">
     <div class="card text-white" style="width: 35rem">
-      <%= image_tag 'top.jpg' %>
+      <%= image_tag 'top.jpg', size: "560x300" %>
       <div class="card-img-overlay d-flex justify-content-center align-items-center">
         <p class="card-text" id="top-text">
           ようこそ、ながのCAKEへ！<br>
@@ -13,29 +13,10 @@
     </div>
   </div>
   <div class="row">
-     <h2>新着商品</h2>
+     <h2 class="mini-title">新着商品</h2>
   </div>
-  <div class="row">
-    <% @items.each do |item| %>
-      <div class="col-lg-3">
-        <%= link_to(item) do %>
-          <div class="card">
-            <div class="card-img-top">
-              <%= image_tag item.image, size: "250x200" %>
-            </div>
-            <div class="card-body">
-              <h4 class="card-title"><%= item.name %></h4>
-              <p class="card-text">
-                <i class="fas fa-yen-sign"></i>
-                <%= item.tax_excluded_price.to_s(:delimited) %>
-              </p>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'public/items/index', items: @items %>
 </div>
 <div class="d-flex justify-content-end mr-5 mt-3">
-  <%= link_to '全ての商品を見る＞', items_path %>
+  <strong><%= link_to '全ての商品を見る＞', items_path, class: "text-dark" %></strong>
 </div>
