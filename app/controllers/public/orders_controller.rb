@@ -53,7 +53,7 @@ class Public::OrdersController < ApplicationController
         @order_details.tax_included_price = (cart_item.item.tax_excluded_price*1.08).floor
         @order_details.save
         current_customer.cart_items.destroy_all
-        redirect_to orders_finish_path
+        redirect_to orders_finish_path and return
       end
     else
       render :new

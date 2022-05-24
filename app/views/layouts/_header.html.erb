@@ -4,8 +4,13 @@
       <a class="navbar-brand ", href="/">
         <%= image_tag 'logo6.png', class: 'icon' %>
       </a>
+      <div class="px-5 text-light ">
+        <% if customer_signed_in? %>
+        ようこそ、<%= current_customer.last_name + current_customer.first_name %>さん！
+        <% end %>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon bg-dark"></span>
+        <span class="navbar-toggler-icon "></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto d-block justify-content-end">
