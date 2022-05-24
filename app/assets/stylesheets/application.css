@@ -76,6 +76,7 @@
   margin-bottom: 10px;
 }
 
+
 select, option{
   border:2px solid;
   border-radius: 5px;
@@ -105,5 +106,13 @@ body {
   right: -5px;
   bottom: -1px;
   z-index: -1;
+
+.icon{
+  width: 90px;
+  height: 90px;
+}
+
+header {
+    background-color: #770000;
 }
 

@@ -34,27 +34,30 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
-    unless Address.where(post_code: @order.post_code)
-    address = Address.new
-    address.customer_id = current_customer.id
-    address.name = @order.name
-    address.post_code = @order.post_code
-    address.address = @order.address
-    address.save
+    unless Address.where(post_code: @order.post_code).present?
+      address = Address.new
+      address.customer_id = current_customer.id
+      address.name = @order.name
+      address.post_code = @order.post_code
+      address.address = @order.address
+      address.save
     end
     # binding.pry
-    @order.save
+    if @order.save
 
-    current_customer.cart_items.each do |cart_item|
-      @order_details = OrderDetail.new
-      @order_details.order_id = @order.id
-      @order_details.item_id = cart_item.item_id
-      @order_details.count = cart_item.total_count
-      @order_details.tax_included_price = (cart_item.item.tax_excluded_price*1.08).floor
-      @order_details.save
+      current_customer.cart_items.each do |cart_item|
+        @order_details = OrderDetail.new
+        @order_details.order_id = @order.id
+        @order_details.item_id = cart_item.item_id
+        @order_details.count = cart_item.total_count
+        @order_details.tax_included_price = (cart_item.item.tax_excluded_price*1.08).floor
+        @order_details.save
+        current_customer.cart_items.destroy_all
+        redirect_to orders_finish_path and return
+      end
+    else
+      render :new
     end
-    current_customer.cart_items.destroy_all
-    redirect_to orders_finish_path
   end
 
   def finish
