@@ -11,11 +11,11 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <header>
-    <%= render 'layouts/header' %>
-  </header>
+  
   <body>
+    <header>
+      <%= render 'layouts/header' %>
+    </header>
     <main>
       <div class="container">
         <div class="row">
@@ -26,6 +26,8 @@
       </div>
       <%= yield %>
     </main>
-    <%= render 'layouts/footer' %>
+    <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>
