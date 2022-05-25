@@ -10,7 +10,7 @@
   <div class="row">
     <table class="table">
       <thead>
-        <tr>
+        <tr class="table-secondary">
           <th>商品ID</th>
           <th>商品名</th>
           <th>税抜価格</th>
@@ -22,7 +22,7 @@
         <% @items.each do |item| %>
           <tr>
             <td><%= item.id %></td>
-            <td><%= link_to item.name, admin_item_path(item.id) %></td>
+            <td><strong><%= link_to item.name, admin_item_path(item.id), class: "text-dark" %></strong></td>
             <td>￥<%= item.tax_included_price.to_s(:delimited) %></td>
             <td><%= item.genre.name %></td>
             <td>
@@ -39,5 +39,5 @@
   </div>
 </div>
 <div class="d-flex justify-content-center">
-  <%= paginate @items %>
+  <%= paginate @items, theme: 'twitter-bootstrap-4' %>
 </div>
