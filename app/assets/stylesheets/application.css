@@ -106,11 +106,11 @@ header {
 }
 
 .pagination>li>a:hover {
-  background-color: #bb5535 !important;
+  background-color: #d7003a !important;
   color: #fff !important;
 }
 
 .pagination>.active>a {
-  background: #bb5535 !important;
+  background-color: #d7003a !important;
   color: #fff !important
 }
