@@ -36,5 +36,7 @@
       </tbody>
       <% end %>
     </table>
-    <%= link_to "戻る", customers_my_page_path, class: "btn btn-primary col-12 mt-4" %>
+</div>
+<div class="d-flex justify-content-center">
+  <%= paginate @orders, theme: 'twitter-bootstrap-4' %>
 </div>
