@@ -97,6 +97,20 @@ body {
 }
 
 header {
-    background-color: #770000;
+  background-color: #770000;
 }
 
+.pagination>li>a {
+  border: none;
+  color: #000 !important;
+}
+
+.pagination>li>a:hover {
+  background-color: #bb5535 !important;
+  color: #fff !important;
+}
+
+.pagination>.active>a {
+  background: #bb5535 !important;
+  color: #fff !important
+}
