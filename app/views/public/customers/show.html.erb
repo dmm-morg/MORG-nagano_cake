@@ -4,7 +4,7 @@
 
     <table class="table table-borderless">
       <tr class="address-index-button">
-        <th class="col-2"><h3><b>登録情報</b></h3></th>
+        <th class="col-2"><h3 class="mini-title">登録情報</h3></th>
         <td><%= link_to '編集する', edit_customers_path(current_customer), class: "btn btn-success col-2" %></td>
       </tr>
     </table>
@@ -37,11 +37,11 @@
     </table>
     <table class="table table-borderless ml-0 mb-5">
       <tr class="address-index-button">
-        <th class="col-2"><h3><b>配送先</b></h3></th>
+        <th class="col-2"><h3 class="mini-title">配送先</h3></th>
         <td><%= link_to '一覧を見る', addresses_path, class: "btn btn-primary col-3" %></td>
       </tr>
       <tr class="order-index-button">
-        <th class="col-2"><h3><b>注文履歴</b></h3></th>
+        <th class="col-2"><h3 class="mini-title">注文履歴</h3></th>
         <td><%= link_to '一覧を見る', orders_path, class: "btn btn-primary col-3" %></td>
       </tr>
     </table>
