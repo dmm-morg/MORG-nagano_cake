@@ -2,7 +2,7 @@ class Public::AddressesController < ApplicationController
   before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
 
   def index
-    @addresses = current_customer.addresses
+    @addresses = current_customer.addresses.page(params[:page]).per(10) #ページネーション追記
     @address = Address.new
   end
 
