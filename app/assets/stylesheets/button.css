@@ -1,6 +1,6 @@
 input.btn-success, a.btn-success {
-  border: 2px solid #583822;
-  background: #583822;
+  border: 2px solid #583822 !important;
+  background: #583822 !important;
 }
 
 input.btn-success:hover, a.btn-success:hover {
@@ -8,9 +8,10 @@ input.btn-success:hover, a.btn-success:hover {
   background: #6f4b3e !important;
 }
 
+
 input.btn-primary, a.btn-primary {
-  border: 2px solid #65318e;
-  background: #65318e;
+  border: 2px solid #65318e !important;
+  background: #65318e !important;
 }
 
 input.btn-primary:hover, a.btn-primary:hover {
@@ -19,8 +20,8 @@ input.btn-primary:hover, a.btn-primary:hover {
 }
 
 input.btn-danger, a.btn-danger {
-  border: 2px solid #d70035;
-  background: #d70035;
+  border: 2px solid #d70035 !important;
+  background: #d70035 !important;
 }
 
 input.btn-danger:hover, a.btn-danger:hover {
