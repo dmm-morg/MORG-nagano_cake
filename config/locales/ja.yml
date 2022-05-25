@@ -296,23 +296,28 @@ ja:
     pm: 午後
 
   activerecord:
-        models:
-          address: 配送先
-        attributes:
-          address:
-            name: 宛先
-            post_code: 郵便番号
-            address: 住所
-
-        models:
-          order: 配送先
-        attributes:
-          order:
-            name: 配達先氏名
-            post_code: 配達先郵便番号
-            address: 配達先住所
-        
-        
-        
-
-
+    attributes:
+      customer:
+        post_code: 郵便番号
+        first_name: 名
+        last_name: 姓
+        first_name_kana: メイ
+        last_name_kana: セイ
+        address: 住所
+        phone_number: 電話番号
+        email: メールアドレス
+        password: パスワード
+      item:
+        name: 商品名
+        introduction: 商品説明
+        tax_excluded_price: 税抜価格
+        image: 商品画像
+        activerecord:
+      address:
+        name: 宛先
+        post_code: 郵便番号
+        address: 住所
+      order:
+        name: 配達先氏名
+        post_code: 配達先郵便番号
+        address: 配達先住所

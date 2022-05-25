@@ -9,7 +9,7 @@ class Customer < ApplicationRecord
   has_many :addresses, dependent: :destroy
   has_many :orders, dependent: :destroy
 
-  validates :first_name, :last_name, :first_name_kana, :last_name_kana, :post_code, :address, :phone_number, presence:true
+  validates :first_name, :last_name, :first_name_kana, :last_name_kana, :post_code, :address, :phone_number, presence: true
   validates :post_code, length: { is: 7 }
   # 退会済ユーザーをブロック
   def active_for_authentication?

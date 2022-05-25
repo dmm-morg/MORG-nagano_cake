@@ -16,16 +16,18 @@ class Item < ApplicationRecord
     validates :genre_id
   end
 
+  validates :tax_excluded_price, numericality: {greater_than: 50}
+
   def tax_included_price
     (tax_excluded_price * 1.1).floor
   end
 
   enum sales_status: { sale: true, stop_selling: false }
-  
+
   def get_item_image(size)
     image.variant(resize: size).processed
   end
-  
+
 
 end
 
