@@ -95,6 +95,14 @@ body {
 .icon{
   width: 90px;
   height: 90px;
+  cursor: pointer;
+  display: block;
+  transition-duration: 0.3s;
+}
+
+.icon:hover{
+  transform: scale(1.1);
+  transition-duration: 0.3s;
 }
 
 header {
@@ -115,3 +123,4 @@ header {
   background: #bb5535 !important;
   color: #fff !important
 }
+
