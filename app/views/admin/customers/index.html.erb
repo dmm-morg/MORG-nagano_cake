@@ -34,7 +34,8 @@
         <% end %>
       </tbody>
     </table>
-    <%= paginate @customers %>
   </div>
 </div>
-
+<div class="d-flex justify-content-center">
+  <%= paginate @customers, theme: 'twitter-bootstrap-4' %>
+</div>
