@@ -43,6 +43,17 @@ footer {
 .icon{
   width: 90px;
   height: 90px;
+<<<<<<< HEAD
+=======
+  cursor: pointer;
+  display: block;
+  transition-duration: 0.3s;
+}
+
+.icon:hover{
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+>>>>>>> 5dca34071b41d7239e1d18174f5a1785d8b6d1b8
 }
 
 #top-text {
