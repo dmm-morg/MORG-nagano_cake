@@ -43,6 +43,14 @@ footer {
 .icon{
   width: 90px;
   height: 90px;
+  cursor: pointer;
+  display: block;
+  transition-duration: 0.3s;
+}
+
+.icon:hover{
+  transform: scale(1.1);
+  transition-duration: 0.3s;
 }
 
 #top-text {
@@ -119,3 +127,4 @@ select, option{
   background: #bb5535 !important;
   color: #fff !important
 }
+
