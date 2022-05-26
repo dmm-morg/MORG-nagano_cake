@@ -14,82 +14,51 @@
  *= require_self
  */
 
-body {
-  background-image: url(back2.jpg);
-  background-size: cover;
-  background-position: center;
-  /*スクロール時の背景の固定*/
-  background-attachment: fixed;
-}
+ main {
+   min-height: 70vh;
+   padding-top: 10px;
+   padding-bottom: 50px;
+ }
 
-header {
-  background-color: #432f2f;
-}
+ footer {
+   width: 100%;
+   height: 130px;
+   padding-top: 2px;
+   letter-spacing: 5px;
+   color: #fff;
+   background-color: #432f2f;
+ }
 
-main {
-  min-height: 70vh;
-  padding-bottom: 50px;
-}
+ #top-text {
+   background-color: rgba(0, 0, 0, 0.6);
+ }
 
-footer {
-  width: 100%;
-  height: 130px;
-  padding-top: 2px;
-  letter-spacing: 4px;
-  color: #fff;
-  background-color: #432f2f;
-}
- 
-.icon{
-  width: 90px;
-  height: 90px;
-  cursor: pointer;
-  display: block;
-  transition-duration: 0.3s;
-}
+ .mini-title {
+   font-family: serif;
+ }
 
-.icon:hover{
-  transform: scale(1.1);
-  transition-duration: 0.3s;
-}
+ .index-img {
+   margin-top: 3px;
+   border-radius: 5px;
+ }
 
-#top-text {
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-  
-.mini-title {
-  font-family: serif;
-}
-  
+ .show-img {
+   width: 350px;
+   height: auto;
+   border-radius: 5px;
+ }
+
 .card {
   margin-top: 20px;
   margin-bottom: 20px;
   height: 300px;
 }
 
-.index-img {
-  margin-top: 3px;
-  border-radius: 5px;
-}
-
-.show-img {
-  width: 350px;
-  height: auto;
-  border-radius: 5px;
-}
-
-#notice {
-  width: 100%;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #eb6ea5;
-}
-
 /* エラーメッセージ表示時のレイアウトの崩れを抑える */
 .field_with_errors {
   display: contents;
 }
+
 
 /*管理者・利用者のログイン・新規会員登録*/
 .field {
@@ -107,13 +76,14 @@ footer {
   margin-bottom: 10px;
 }
 
+
+
 select, option{
   border:2px solid;
   border-radius: 5px;
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 body {
   background-image: url(back2.jpg);
   background-size: cover;
@@ -128,8 +98,6 @@ body {
   cursor: pointer;
   display: block;
   transition-duration: 0.3s;
-  
-  
 }
 
 .icon:hover{
@@ -141,8 +109,6 @@ header {
     background-color: #432f2f;
 }
 
-=======
->>>>>>> origin/develop
 .pagination>li>a {
   border: none;
   color: #000 !important;
