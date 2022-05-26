@@ -43,19 +43,19 @@ class Public::OrdersController < ApplicationController
       address.address = @order.address
       address.save
     end
-    # binding.pry
+
     if @order.save
 
       current_customer.cart_items.each do |cart_item|
-        @order_details = OrderDetail.new
-        @order_details.order_id = @order.id
-        @order_details.item_id = cart_item.item_id
-        @order_details.count = cart_item.total_count
-        @order_details.tax_included_price = (cart_item.item.tax_excluded_price*1.08).floor
-        @order_details.save
-        current_customer.cart_items.destroy_all
-        redirect_to orders_finish_path and return
+        @order_detail = OrderDetail.new
+        @order_detail.order_id = @order.id
+        @order_detail.item_id = cart_item.item_id
+        @order_detail.count = cart_item.total_count
+        @order_detail.tax_included_price = (cart_item.item.tax_excluded_price*1.10).floor
+        @order_detail.save
       end
+        current_customer.cart_items.destroy_all
+        redirect_to orders_finish_path
     else
       render :new
     end
@@ -65,7 +65,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_customer.orders.page(params[:page]).per(10)
+    @orders = current_customer.orders.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def show
