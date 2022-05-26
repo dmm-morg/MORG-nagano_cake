@@ -22,9 +22,9 @@
               <%= image_tag cart_item.item.image, size: "100x60" %>
               <strong><%= cart_item.item.name %></strong>
             </td>
-            <td><%= cart_item.item.tax_included_price.to_s(:delimited) %></td>
+            <td>￥<%= cart_item.item.tax_included_price.to_s(:delimited) %></td>
             <td><%= cart_item.total_count %></td>
-            <td><%= cart_item.subtotal.to_s(:delimited)%></td>
+            <td>￥<%= cart_item.subtotal.to_s(:delimited)%></td>
           </tr>
         <% end %>
          </tbody>
@@ -36,15 +36,15 @@
           <tbody>
             <tr>
               <th>送料</th>
-              <th><%= @order.shipping_cost %></th>
+              <th>￥<%= @order.shipping_cost %></th>
             </tr>
             <tr>
               <th>商品合計</th>
-              <th><%= @total.round.to_s(:delimited) %></th>
+              <th>￥<%= @total.round.to_s(:delimited) %></th>
             </tr>
             <tr>
             <th>請求金額</th>
-            <th><%= @order.total_payment.to_s(:delimited) %></th>
+            <th>￥<%= @order.total_payment.to_s(:delimited) %></th>
           </tr>
         </tbody>
       </table>
