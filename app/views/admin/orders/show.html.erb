@@ -34,7 +34,7 @@
             <th>注文ステータス</th>
             <th>
               <%= f.select :order_status, Order.order_statuses_i18n.invert, class: "order_status" %>
-              <%= f.submit "更新", class: "btn btn-outline-success" %>
+              <%= f.submit "更新", class: "btn btn-success" %>
             </th>
           </tr>
           <% end %>
@@ -65,7 +65,7 @@
             <td><%= (order_detail.item.tax_included_price*order_detail.count).to_s(:delimited) %>円</td>
               <%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), method: :patch, local: true do |f| %>
                 <td><%= f.select :making_status, OrderDetail.making_statuses_i18n.invert, class: "making_status" %></td>
-                <td><%= f.submit "更新", class: "btn btn-outline-success" %></td>
+                <td><%= f.submit "更新", class: "btn btn-success" %></td>
               <% end %>
           </tr>
           <% end %>
