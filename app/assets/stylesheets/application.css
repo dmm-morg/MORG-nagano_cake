@@ -98,6 +98,8 @@ body {
   cursor: pointer;
   display: block;
   transition-duration: 0.3s;
+  
+  
 }
 
 .icon:hover{
