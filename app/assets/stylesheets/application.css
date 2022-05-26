@@ -21,7 +21,6 @@ body {
   /*スクロール時の背景の固定*/
   background-attachment: fixed;
 }
-<<<<<<< HEAD
 
 header {
   background-color: #432f2f;
@@ -54,8 +53,6 @@ footer {
   transition-duration: 0.3s;
 }
 
-=======
-
 header {
   background-color: #432f2f;
 }
@@ -87,7 +84,6 @@ footer {
   transition-duration: 0.3s;
 }
 
->>>>>>> origin/develop
 #top-text {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.6);
