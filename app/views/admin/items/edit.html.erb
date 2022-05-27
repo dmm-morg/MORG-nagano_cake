@@ -1,5 +1,8 @@
 <div class='container'>
   <div class='row'>
+    <h3 class="mini-title">商品編集</h3>
+  </div
+  <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <%= render "layouts/errors", obj: @item %>
       <%= form_with model: @item, url: admin_item_path(@item), method: :patch, local: true do |f| %>
