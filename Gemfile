@@ -61,7 +61,6 @@ gem 'kaminari','~> 1.2.1'
 
 gem "enum_help"
 
-gem 'pry-byebug'
 
 gem 'bootstrap4-kaminari-views'
 

@@ -12,7 +12,6 @@ class Public::AddressesController < ApplicationController
     if @address.save
     redirect_to request.referer, notice: "配送先登録に成功しました"
     else
-      # @addresses = Address.all
       @addresses = current_customer.addresses.page(params[:page]).per(10) #ログインしている会員のアドレスを全て@addressesに入れる
       render 'index'
     end
